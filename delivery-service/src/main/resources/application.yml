@@ -1,0 +1,25 @@
+
+server:
+  port: 8082
+
+spring:
+  application:
+    name: delivery-service
+  cloud:
+    stream:
+      default-binder: rabbit
+      bindings:
+        orderCreated-in-0:
+          destination: orders.exchange
+          content-type: application/json
+          group: logistics-group
+
+  datasource:
+    url: jdbc:h2:mem:deliverydb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
