@@ -1,5 +1,8 @@
 #### To run this project be sure to use Java 17
 
+#### To run this application run the command:
+- docker compose up
+
 #### Use this curl to send a message
 
 curl --location 'http://localhost:8081/orders' \
